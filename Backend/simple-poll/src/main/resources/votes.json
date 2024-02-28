@@ -1,0 +1,21 @@
+{
+  "pollId": 1,
+  "totalVotes": 79,
+  "results": [
+    {
+      "optionId": 1,
+      "optionText": "Manchester City",
+      "votes": 36
+    },
+    {
+      "optionId": 2,
+      "optionText": "Arsenal",
+      "votes": 17
+    },
+    {
+      "optionId": 3,
+      "optionText": "Liverpool",
+      "votes": 26
+    }
+  ]
+}
