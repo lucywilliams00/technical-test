@@ -1,0 +1,62 @@
+.app {
+    text-align: center;
+    background-image: url("./Images/background.jpg");
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    padding: 10vh;
+    font-family: "OutfitRegular";
+}
+
+#logo {
+    height: 10vh;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 1.0);
+    font-size: 3vh;
+    padding: 2vh 7vh;
+    border-radius: 0.5vh;
+    width: 50vh;
+    border: 0.25vh solid white;
+    margin: 2vh;
+}
+
+.vote:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+}
+
+.submit:hover {
+    background-color: lavender;
+}
+
+.selected {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.not-selected {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.heading {
+    font-size: 7vh;
+    padding: 5vh;
+    font-family: "OutfitBold";
+}
+
+.result {
+    background-color: rgba(255, 255, 255, 0.25);
+    font-size: 3vh;
+    padding: 2vh 7vh;
+    border-radius: 0.5vh;
+    width: 50vh;
+    border: 0.25vh solid white;
+    margin: 2vh;
+    display: inline-block;
+}
+
+.messages {
+    font-size: 2vh;
+}
