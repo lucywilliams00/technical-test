@@ -85,3 +85,32 @@ I was only able to complete manual unit and integration tests since the applicat
 ```bash
 console.log("Vote: " + response.data);
 ```
+# Update (Fixes and Changes)
+## Fix Routing
+The routing has been fixed. The issue I had was that I have used class components instead of functional components for my application and the latest version of react-router-dom doesn't allow hooks to be used in class components. Instead of rewriting the entire project or downgrading react-router-dom, I found a fix, but it would be much better to implement react-router-dom's useNavigate instead.
+
+To note, when the application is run for the first time, the confirmation page requires refreshing to display the updated table values. If you then go back to the voting page and vote again, the confirmation page will be correct and will not need refreshing. It only happens on the first vote.
+## Implement In-Memory H2 Database
+The in-memory H2 database has been implemented. Currently, there is only one table which contains the votes with a poll_id, option_id and number of votes (there is also a primary key ID which, if the test was a real scenario, would not be needed since poll_id and option_id would act as foreign and composite keys). The following is required to set up the database:
+
+![IntelliJ Database Menu](Database_Menu.png)
+
+On the right hand side of IntelliJ, click the database symbol, then click the plus symbol and select Data Source --> H2. This will bring up the following configuration window:
+
+![IntelliJ Database Configuration Window](Database_Configuration.png)
+
+Enter the details as can be seen in the image above. Test the connection works then click OK. Then run the data.sql file in the resources folder using the green arrow that appears when opening it:
+
+![Data Execution](Data_Execution.png)
+
+This should have initialised the database. You can check by opening the newly created vote table in the database menu, and when running the backend server, go to the following URL to view and query the table:
+http://localhost:8080/h2-ui
+
+## Error Handling
+With the implementation of the in-memory H2 database, more error handling has been added for the following:
+### Post A Vote
+If, somehow, the user managed to POST with an invalid poll ID or option ID, the database would return a null value and the server would send a NOT_FOUND HTTP status. 
+### Get Votes
+If, somehow, the user managed to GET with an invalid poll ID, the database would return an empty list and the server would send a NOT_FOUND HTTP status.
+### Get Poll
+As mentioned before, the database only has one table. However, if the poll was stored in a table instead of the JSON file, the poll and vote tables could be linked and error handling could be introduced into GET Poll to flag non-existing polls.

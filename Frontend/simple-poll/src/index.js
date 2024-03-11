@@ -6,11 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import './Fonts/Outfit-Regular.ttf';
 import './Fonts/Outfit-Bold.ttf';
 import ConfirmationPage from './ConfirmationPage';
+import Routes from './Routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ConfirmationPage />
+    <Routes />
   </React.StrictMode>
 );
 
